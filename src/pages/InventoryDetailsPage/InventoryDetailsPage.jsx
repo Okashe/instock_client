@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Edit from "../../assets/icons/edit-white-24px.svg";
-import BackArrow from "../../assets/icons/arrow_back-24px.svg";
+import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import InventoryItemDetails from "../../components/InventoryItemDetails/InventoryItemDetails";
 
 function InventoryDetailsPage() {

@@ -1,9 +1,9 @@
 import React from "react";
 import "./InventoryItem.scss";
 import { Link, useNavigate } from "react-router-dom";
-import editIcon from "../../assets/icons/edit-24px.svg";
-import deleteicon from "../../assets/icons/delete_outline-24px.svg";
-import ChevronRightIcon from "../../assets/icons/chevron_right-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
+import deleteicon from "../../assets/Icons/delete_outline-24px.svg";
+import ChevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function InventoryItem({ inventory, handleOpenInventoryModal }) {
   const statusClass =
@@ -53,19 +53,19 @@ function InventoryItem({ inventory, handleOpenInventoryModal }) {
         </div>
       </div>
       <div className="inventory-item__actions">
-          <button className="inventory-item__delete">
-            <img
-              src={deleteicon}
-              id={inventory.id}
-              onClick={handleOpenInventoryModal}
-            />
-          </button>
-          <button className="inventory-item__delete">
-            <img
-              src={editIcon}
-              onClick={() => navigate(`/inventories/edit/${inventory.id}`)}
-            />
-          </button>
+        <button className="inventory-item__delete">
+          <img
+            src={deleteicon}
+            id={inventory.id}
+            onClick={handleOpenInventoryModal}
+          />
+        </button>
+        <button className="inventory-item__delete">
+          <img
+            src={editIcon}
+            onClick={() => navigate(`/inventories/edit/${inventory.id}`)}
+          />
+        </button>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ function InventoryDetailsPage() {
     const fetchDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/inventories/${id}`
+          `https://instock-api-d37f38c9d716.herokuapp.com/inventories/${id}`
         );
         setInventoryDetails(response.data);
       } catch (error) {

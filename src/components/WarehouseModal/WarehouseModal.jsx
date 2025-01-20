@@ -16,7 +16,7 @@ export default function WarehouseModal({
       try {
         if (isOpen && warehouseId) {
           const response = await axios.get(
-            `http://localhost:8080/warehouses/${warehouseId}`
+            `https://instock-api-d37f38c9d716.herokuapp.com/warehouses/${warehouseId}`
           );
           setWarehouseName(response.data.warehouse_name);
         }
@@ -29,7 +29,9 @@ export default function WarehouseModal({
   }, [isOpen, warehouseId]);
   const deleteWarehouse = async () => {
     try {
-      await axios.delete(`http://localhost:8080/warehouses/${warehouseId}`);
+      await axios.delete(
+        `https://instock-api-d37f38c9d716.herokuapp.com/warehouses/${warehouseId}`
+      );
       fetchData();
       onClose();
     } catch (error) {

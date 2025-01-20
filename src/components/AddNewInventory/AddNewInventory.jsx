@@ -20,7 +20,9 @@ function AddNewInventory() {
   useEffect(() => {
     const getWarehouses = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/warehouses");
+        const response = await axios.get(
+          "https://instock-api-d37f38c9d716.herokuapp.com/warehouses"
+        );
         setWarehouseList(response.data);
       } catch (error) {
         console.error("Error fetching warehouses:", error);
@@ -54,7 +56,10 @@ function AddNewInventory() {
     };
 
     try {
-      await axios.post("http://localhost:8080/inventories", newInventoryItem);
+      await axios.post(
+        "https://instock-api-d37f38c9d716.herokuapp.com/inventories",
+        newInventoryItem
+      );
       navigate(-1);
     } catch (error) {
       console.error("Unable to add inventory item:", error);
@@ -133,7 +138,9 @@ function AddNewInventory() {
                 id="inStock"
                 onChange={() => setStatus("In Stock")}
               />
-              <label htmlFor="inStock" className="new-inventory__label">In stock</label>
+              <label htmlFor="inStock" className="new-inventory__label">
+                In stock
+              </label>
 
               <input
                 type="radio"
@@ -143,7 +150,9 @@ function AddNewInventory() {
                 id="outOfStock"
                 onChange={() => setStatus("Out Of Stock")}
               />
-              <label htmlFor="outOfStock" className="new-inventory__label">Out of stock</label>
+              <label htmlFor="outOfStock" className="new-inventory__label">
+                Out of stock
+              </label>
             </div>
 
             <label className="new-inventory__label">Quantity</label>

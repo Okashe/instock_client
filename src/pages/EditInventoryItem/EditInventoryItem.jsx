@@ -16,7 +16,7 @@ function EditInventoryItem() {
     const getItem = async () => {
       try {
         const itemResponse = await axios.get(
-          `http://localhost:8080/inventories/${id}`
+          `https://instock-api-d37f38c9d716.herokuapp.com/inventories/${id}`
         );
         const itemData = itemResponse.data;
         setData(itemData);
@@ -32,7 +32,7 @@ function EditInventoryItem() {
     const getWarehouse = async () => {
       try {
         const warehouseResponse = await axios.get(
-          `http://localhost:8080/warehouses`
+          `https://instock-api-d37f38c9d716.herokuapp.com/warehouses`
         );
         const warehouseList = warehouseResponse.data;
         const itemWarehouse = warehouseList.find(

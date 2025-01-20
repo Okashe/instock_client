@@ -23,7 +23,9 @@ function Inventory() {
   };
   const fetchInventories = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/inventories`);
+      const response = await axios.get(
+        `https://instock-api-d37f38c9d716.herokuapp.com/inventories`
+      );
       setInventory(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);

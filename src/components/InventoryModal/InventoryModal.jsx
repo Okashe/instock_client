@@ -16,7 +16,7 @@ export default function InventoryModal({
       try {
         if (isOpen && inventoryId) {
           const response = await axios.get(
-            `http://localhost:8080/inventories/${inventoryId}`
+            `https://instock-api-d37f38c9d716.herokuapp.com/inventories/${inventoryId}`
           );
           setInventoryName(response.data.item_name);
         }
@@ -30,7 +30,9 @@ export default function InventoryModal({
 
   const deleteInventory = async () => {
     try {
-      await axios.delete(`http://localhost:8080/inventories/${inventoryId}`);
+      await axios.delete(
+        `https://instock-api-d37f38c9d716.herokuapp.com/inventories/${inventoryId}`
+      );
       fetchData();
       onClose();
     } catch (error) {

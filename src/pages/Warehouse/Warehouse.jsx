@@ -23,7 +23,9 @@ function Warehouse() {
 
   const fetchWarehouses = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/warehouses`);
+      const response = await axios.get(
+        `https://instock-api-d37f38c9d716.herokuapp.com/warehouses`
+      );
       setWarehouseData(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -38,7 +40,7 @@ function Warehouse() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/warehouses/match/${keyword}`
+          `https://instock-api-d37f38c9d716.herokuapp.com/warehouses/match/${keyword}`
         );
 
         setResults(response.data);

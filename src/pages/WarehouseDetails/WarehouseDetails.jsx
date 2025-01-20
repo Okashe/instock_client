@@ -25,7 +25,7 @@ function WarehouseDetails() {
   const getWarehouse = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/warehouses/${id}`
+        `https://instock-api-d37f38c9d716.herokuapp.com/warehouses/${id}`
       );
       setWarehouseData(response.data);
     } catch (error) {
@@ -36,7 +36,7 @@ function WarehouseDetails() {
   const getWarehouseInventory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/warehouses/${id}/inventories`
+        `https://instock-api-d37f38c9d716.herokuapp.com/warehouses/${id}/inventories`
       );
       setWarehouseInventory(response.data);
     } catch (error) {
